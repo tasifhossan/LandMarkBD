@@ -4,8 +4,9 @@
 
 A responsive frontend template built using Tailwind CSS to showcase property market analysis, investment guides, and blog content focused on the Bangladesh real estate sector (Dhaka, Sylhet, etc.).
 
-## 🚀 Key Features
+## 🚀 Live Demo & Key Features
 
+* **Live Site:** [https://tasifhossan.github.io/LandMarkBD/](https://tasifhossan.github.io/LandMarkBD/)
 * **Responsive Design:** Fully mobile-optimized layouts using Tailwind CSS utility classes.
 * **Market Insights:** Dedicated section for expert articles and investment advice.
 * **Clean Blog UI:** Separated layout for featured content and quick-read blog cards.
@@ -16,7 +17,7 @@ A responsive frontend template built using Tailwind CSS to showcase property mar
 
 * **HTML5**
 * **Tailwind CSS:** For rapid, utility-first styling and responsive breakpoints.
-* **JavaScript:** For responsive Navbar functionality
+* **JavaScript:** For responsive Navbar functionality.
 
 ***
 
@@ -28,12 +29,12 @@ A responsive frontend template built using Tailwind CSS to showcase property mar
     ```
 
 2.  **Navigate to the directory:**
-    ```sh
+    ```bash
     cd LandMarkBD
     ```
 
 3.  **Open `index.html`:**
-    Simply open the `index.html` file in your web browser to view the project.
+    Simply open the `index.html` file in your web browser to view the project locally.
 
 ***
 
