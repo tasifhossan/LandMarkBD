@@ -1,0 +1,1478 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts: DM Sans and Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN with custom fonts -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            dmsans: ['"DM Sans"', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome CDN for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="assets/style.css" />
+  <title> LandMarkBD</title>
+</head>
+<body class="bg-white">
+
+  <!-- Header -->
+  <header class="sticky top-0 left-0 z-50 bg-white shadow-sm">
+    <nav class="container mx-auto flex items-center justify-between px-4 py-3">
+      <a href="index.html" aria-label="Home" class="py-1">
+        <img src="assets/images/logo.png" alt="Project Logo" class="h-10 shrink-0" />
+      </a>
+
+      <div class="hidden md:flex items-center gap-x-6 text-nature-500 text-sm font-semibold lg:text-lg xl:space-x-6">
+        <a href="index.html" class="group-relative">Home</a>
+        <a href="#properties" class="group-relative">Properties</a>
+        <a href="#reviews" class="group-relative">Reviews</a>
+        <a href="#blogs" class="group-relative">Blogs</a>
+        <a href="#contact" class="group-relative">Contacts</a>
+      </div>
+
+      <div class="flex items-center gap-x-6">
+        <button
+          type="button"
+          data-modal-target="search-modal"
+          data-modal-toggle="search-modal"
+          class="transition duration-300 text-nature-600 hover:text-[#3b71fe]"
+          aria-label="Search"
+        >
+          <i class="fa-solid fa-magnifying-glass text-xl"></i>
+        </button>
+
+        <button
+          id="mobile-menu-button"
+          class="md:hidden p-2 text-nature-600 hover:text-[#3b71fe]"
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0V0z"></path>
+            <path d="M3 18h13v-2H3v2zm0-5h10v-2H3v2zm0-7v2h13V6H3zm18 9.59L17.42 12 21 8.41 19.59 7l-5 5 5 5L21 15.59z"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden container mx-auto px-4 py-2 bg-white shadow-lg absolute w-full z-40">
+      <div class="flex flex-col text-nature-500 text-sm font-semibold">
+        <a href="index.html" class="font-dmsans py-2 border-b transition hover:text-[#3b71fe]">Home</a>
+        <a href="#properties" class="font-dmsans py-2 border-b transition hover:text-[#3b71fe]">Properties</a>
+        <a href="#reviews" class="font-dmsans py-2 border-b transition hover:text-[#3b71fe]">Reviews</a>
+        <a href="#blogs" class="font-dmsans py-2 border-b transition hover:text-[#3b71fe]">Blogs</a>
+        <a href="#contact" class="font-dmsans py-2 transition hover:text-[#3b71fe]">Contacts</a>
+      </div>
+    </div>
+  </header>
+
+<!-- Hero Section start -->
+<section class="w-full overflow-hidden bg-blue-50 px-3 pb-6 md:pb-8 lg:pb-12 xl:pb-16 2xl:px-0">
+  <div class="relative w-full">
+
+    <!-- ✅ Background Image (only visible on md and up) -->
+    <div class="absolute inset-y-0 right-0 hidden md:block lg:w-3/5 xl:w-2/3 z-0">
+      <picture>
+        <source srcset="assets/images/image-112.png" media="(min-width: 1536px)" />
+        <img
+          src="assets/images/image-112.png"
+          alt="Property background"
+          class="h-full w-full object-cover"
+        />
+      </picture>
+    </div>
+    
+    <!-- ✅ Foreground Content (text and button) -->
+    <div
+      class="relative z-10 container mx-auto flex flex-col items-center justify-center gap-y-3 py-16 md:items-start md:gap-y-4 md:py-28 lg:gap-y-6 lg:py-36 xl:gap-y-8 xl:py-40 2xl:py-52"
+    >
+      <h1 class="text-4xl font-extrabold text-center md:text-left md:text-6xl leading-tight font-dmsans">
+        Discover Your <br />Ideal Property
+      </h1>
+      <p class="text-center text-base font-normal text-blue-600 md:text-left lg:text-lg xl:text-xl 2xl:text-2xl font-poppins">
+        Flats, Apartments, and Plots <br />
+        in Dhaka, Chittagong, and across Bangladesh.
+      </p>
+      <a
+        href="#"
+        class="rounded-full bg-blue-600 px-4 py-3 text-white text-lg font-semibold font-dmsans transition hover:bg-blue-700 md:py-4 md:px-6 md:text-xl"
+      >
+        Search Properties
+      </a>
+    </div>
+
+  </div>
+
+  <div class="container mx-auto sm:hidden mt-6 font-poppins">
+    <form action="#" class="w-full space-y-3">
+      <div class="flex flex-col space-y-1">
+        <label class="sr-only" for="location-sm">Location</label>
+        <div class="flex items-center">
+          <div class="flex items-center rounded-l-md border border-gray-300 bg-gray-200 px-3 py-2 text-gray-700">
+            <i class="fa-solid fa-location-crosshairs text-sm"></i>
+          </div>
+          <input
+            type="text"
+            id="location-sm"
+            placeholder="e.g., Mirpur, Gulshan, or Chattogram"
+            class="w-full rounded-r-md border border-gray-300 bg-gray-50 px-3 py-2 text-sm text-gray-900 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          />
+        </div>
+      </div>
+
+      <div class="flex flex-col space-y-1">
+        <label class="sr-only" for="property-sm">Property</label>
+        <div class="flex items-center">
+          <div class="flex items-center rounded-l-md border border-gray-300 bg-gray-200 px-3 py-2 text-gray-700">
+            <i class="fa-solid fa-house-chimney text-sm"></i>
+          </div>
+          <input
+            type="text"
+            id="property-sm"
+            placeholder="e.g., Flat, Apartment, or Plot"
+            class="w-full rounded-r-md border border-gray-300 bg-gray-50 px-3 py-2 text-sm text-gray-900 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          />
+        </div>
+      </div>
+
+      <div class="flex flex-col space-y-1">
+        <label class="sr-only" for="price-sm">Price</label>
+        <div class="flex items-center">
+          <div class="flex items-center rounded-l-md border border-gray-300 bg-gray-200 px-3 py-2 text-gray-700">
+            <i class="fa-solid fa-sack-dollar text-sm"></i>
+          </div>
+          <input
+            type="text"
+            id="price-sm"
+            placeholder="Price in Lakhs (e.g., 50 Lakhs - 1 Crore)"
+            class="w-full rounded-r-md border border-gray-300 bg-gray-50 px-3 py-2 text-sm text-gray-900 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-4 divide-x font-medium text-center">
+        <button type="button" class="rounded-l-md py-3 bg-blue-600 text-white transition hover:bg-blue-700">Sell</button>
+        <button type="button" class="py-3 text-gray-900 transition hover:bg-gray-200">Buy</button>
+        <button type="button" class="py-3 text-gray-900 transition hover:bg-gray-200">Rent</button>
+        <button type="submit" class="rounded-r-md bg-blue-600 py-3 text-white transition hover:bg-blue-700">
+          <i class="fa-solid fa-magnifying-glass text-lg"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="container mx-auto hidden sm:block mt-10 font-poppins">
+    <div class="max-w-md grid grid-cols-3 rounded-t-xl bg-gray-100 text-blue-600 font-semibold text-center cursor-pointer">
+      <div role="button" class="py-3 rounded-tl-xl transition hover:bg-blue-600 hover:text-white">Rent</div>
+      <div role="button" class="py-3 transition hover:bg-blue-600 hover:text-white">Buy</div>
+      <div role="button" class="bg-blue-600 text-white py-3 rounded-tr-xl">Sell</div>
+    </div>
+
+    <form action="#" class="flex flex-wrap items-center justify-between rounded-b-xl bg-white p-6 shadow-lg">
+      <input type="hidden" name="type" id="h1-search-type" value="sell" />
+
+      <div class="w-full md:w-1/4 space-y-1 mb-4 md:mb-0">
+        <label for="location" class="flex items-center gap-2 font-bold text-blue-600 text-lg font-dmsans">
+          <i class="fa-solid fa-location-crosshairs"></i> Location
+        </label>
+        <input
+          id="location"
+          type="text"
+          placeholder="e.g., Gulshan, Mirpur, or Chattogram"
+          class="w-full custom-form-input"
+        />
+      </div>
+
+      <div class="hidden md:block w-px h-14 bg-gray-200 mx-4"></div>
+
+      <div class="w-full md:w-1/4 space-y-1 mb-4 md:mb-0">
+        <label for="property" class="flex items-center gap-2 font-bold text-blue-600 text-lg font-dmsans">
+          <i class="fa-solid fa-house-chimney"></i> Property
+        </label>
+        <input
+          id="property"
+          type="text"
+          placeholder="e.g., Flat/Apartment, Plot, or Commercial"
+          class="w-full custom-form-input"
+        />
+      </div>
+
+      <div class="hidden md:block w-px h-14 bg-gray-200 mx-4"></div>
+
+      <div class="w-full md:w-1/4 space-y-1 mb-4 md:mb-0">
+        <label for="price" class="flex items-center gap-2 font-bold text-blue-600 text-lg font-dmsans">
+          <i class="fa-solid fa-sack-dollar"></i> Price
+        </label>
+        <input
+          id="price"
+          type="text"
+          placeholder="Price in Lakhs (Lacs) or Crores"
+          class="w-full custom-form-input"
+        />
+      </div>
+
+      <div class="hidden md:block w-px h-14 bg-gray-200 mx-4"></div>
+
+      <div class="w-full md:w-auto flex justify-end">
+        <button
+          type="submit"
+          class="flex items-center gap-3 rounded-xl bg-blue-600 px-6 py-3 text-white font-bold font-poppins transition hover:bg-blue-700"
+        >
+          <img src="assets/icons/search.svg" alt="Search Icon" class="w-5 h-5" />
+          <span class="hidden md:block">Search</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- hero section end -->
+
+
+
+  <!-- Best place section start -->
+<section class="section-padding bg-white px-3 xl:px-0">
+    <div class="container mx-auto flex flex-col items-center justify-center">
+        <h2 class="text-3xl md:text-4xl font-bold font-dmsans text-center mb-5 md:mb-0">
+            Find Your Dream Property in Bangladesh
+        </h2>
+        <p class="font-poppins text-center text-gray-600 my-8 leading-relaxed max-w-2xl">
+            From modern apartments in <span class="font-bold">Dhaka</span>  to spacious land in <span class="font-bold">Chattogram</span>  and investment opportunities in <span class="font-bold">Sylhet</span> , we help you find the perfect real estate for your future.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 lg:divide-x-2 lg:divide-y-2">
+            
+            <div data-title="Cox's Bazar" data-img="assets/images/image-9.png" class="destination-card">
+                <div><img src="assets/images/image-9.png" alt="Cox's Bazar" class="card-image" /></div>
+                <a href="#" class="card-title">Dhaka City</a>
+                <p class="card-info"><i class="fa-solid fa-location-crosshairs"></i> <span>Luxury Apartments</span></p>
+            </div>
+
+            <div data-title="Sundarbans" data-img="assets/images/image-10.png" class="destination-card">
+                <div><img src="assets/images/image-10.png" alt="Sundarbans" class="card-image" /></div>
+                <a href="#" class="card-title">Chattogram (CTG)</a>
+                <p class="card-info"><i class="fa-solid fa-location-crosshairs"></i> <span>Residential Plots</span></p>
+            </div>
+
+            <div data-title="Sreemangal, Sylhet" data-img="assets/images/image-11.png" class="destination-card">
+                <div><img src="assets/images/image-11.png" alt="Sreemangal, Sylhet" class="card-image" /></div>
+                <a href="#" class="card-title">Sylhet</a>
+                <p class="card-info"><i class="fa-solid fa-location-crosshairs"></i> <span>Agricultural Land</span></p>
+            </div>
+
+            <div data-title="Sajek Valley, Rangamati" data-img="assets/images/image-12.png" class="destination-card">
+                <div><img src="assets/images/image-12.png" alt="Sajek Valley, Rangamati" class="card-image" /></div>
+                <a href="#" class="card-title">Khulna</a>
+                <p class="card-info"><i class="fa-solid fa-location-crosshairs"></i> <span>Commercial Spaces</span></p>
+            </div>
+
+            <div data-title="St. Martin's Island" data-img="assets/images/image-13.png" class="destination-card hidden sm:block">
+                <div><img src="assets/images/image-13.png" alt="St. Martin's Island" class="card-image" /></div>
+                <a href="#" class="card-title">Cox's Bazar</a>
+                <p class="card-info"><i class="fa-solid fa-location-crosshairs"></i> <span>Holiday Homes</span></p>
+            </div>
+
+            <div data-title="Old Dhaka" data-img="assets/images/image-14.png" class="destination-card hidden sm:block">
+                <div><img src="assets/images/image-14.png" alt="Old Dhaka" class="card-image" /></div>
+                <a href="#" class="card-title">Gulshan/Banani</a>
+                <p class="card-info"><i class="fa-solid fa-location-crosshairs"></i> <span>Premium Listings</span></p>
+            </div>
+
+            <div data-title="Bandarban Hill Tracts" data-img="assets/images/image-15.png" class="destination-card hidden lg:block">
+                <div><img src="assets/images/image-15.png" alt="Bandarban Hill Tracts" class="card-image" /></div>
+                <a href="#" class="card-title">Uttara, Dhaka</a>
+                <p class="card-info"><i class="fa-solid fa-location-crosshairs"></i> <span>New Developments</span></p>
+            </div>
+
+            <div data-title="Ahsan Manzil, Dhaka" data-img="assets/images/image-16.png" class="destination-card hidden lg:block">
+                <div><img src="assets/images/image-16.png" alt="Ahsan Manzil, Dhaka" class="card-image" /></div>
+                <a href="#" class="card-title">Mirpur, Dhaka</a>
+                <p class="card-info"><i class="fa-solid fa-location-crosshairs"></i> <span>Affordable Housing</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+  <!-- Best place section end -->
+
+<!-- Properties section start -->
+<section id="properties" class="bg-white pb-10 pt-6 md:pb-16 md:pt-8 lg:pb-20 lg:pt-12 xl:pb-24 xl:pt-16 2xl:pb-28">
+    <div class="container mx-auto flex flex-col items-center justify-center px-3 2xl:px-0">
+        <div class="space-y-2 md:space-y-3 lg:space-y-5 text-center">
+            <h2 class="heading-2 font-dmsans text-3xl md:text-4xl font-bold">
+                Featured Properties
+            </h2>
+            <p class="heading-tagline font-poppins text-gray-600 text-lg md:text-xl">
+                Best properties to buy for your family
+            </p>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 gap-4 md:mt-10 md:gap-7 md:grid-cols-2 lg:mt-12 lg:grid-cols-3 xl:mt-16 2xl:mt-20">
+            
+            <div class="rounded-[20px] bg-new-100 border border-[#f4f5f6] transition-all duration-300 ease-in-out hover:shadow-2xl group cursor-pointer">
+                <div class="relative h-auto w-full overflow-hidden rounded-t-[20px]">
+                    <div class="absolute right-0 top-0 z-10 rounded-tr-[20px] bg-[#3b71fe] px-3.5 py-1.5 font-semibold text-white">
+                        For Sale
+                    </div>
+                    <img
+                        src="assets/images/image-45.png"
+                        alt="Featured Apartment in Bashundhara"
+                        class="h-full max-h-[250px] w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.15]"
+                    />
+                </div>
+                <div class="p-8">
+                    <p class="text-2xl font-medium text-new-900">
+                        BDT 1.2 Crore
+                    </p>
+                    <h4 class="mb-5 mt-3 text-2xl font-medium leading-8 text-new-900 font-dmsans">
+                        Modern Apartment in Bashundhara R/A, Dhaka
+                    </h4>
+                    <div class="mb-7 flex items-center gap-x-2.5">
+                        <i class="fa-solid fa-map-pin text-secondary"></i>
+                        <p class="font-poppins text-sm font-medium text-new-800">
+                            Block D, Bashundhara R/A, Dhaka
+                        </p>
+                    </div>
+                    <hr />
+                    <div class="mt-6 grid grid-cols-2 items-center">
+                        <div class="flex items-center gap-x-2.5">
+                            <div class="flex items-center gap-x-2">
+                                <i class="fa-solid fa-bed text-primary"></i>
+                                <span class="font-poppins text-sm font-normal text-new-900">3 Beds</span>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <i class="fa-solid fa-bath text-primary"></i>
+                                <span class="font-poppins text-sm font-normal text-new-900">3 Baths</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end">
+                            <a href="#" class="flex items-center gap-x-1.5 transition-all duration-300 ease-in-out hover:gap-x-4 md:gap-x-2 lg:gap-x-2.5 font-poppins text-sm font-medium text-new-900">
+                                <span>View Details</span>
+                                <i class="fa-solid fa-arrow-right text-primary"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-[20px] bg-new-100 border border-[#f4f5f6] transition-all duration-300 ease-in-out hover:shadow-2xl group cursor-pointer" data-aos-delay="100">
+                <div class="relative h-auto w-full overflow-hidden rounded-t-[20px]">
+                    <div class="absolute right-0 top-0 z-10 rounded-tr-[20px] bg-[#3b71fe] px-3.5 py-1.5 font-semibold text-white">
+                        For Rent
+                    </div>
+                    <img
+                        src="assets/images/image-46.png"
+                        alt="Featured Commercial Space"
+                        class="h-full max-h-[250px] w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.15]"
+                    />
+                </div>
+                <div class="p-8">
+                    <p class="text-2xl font-medium text-new-900">BDT 85,000<span class="font-poppins text-sm font-medium text-new-800">/mo</span></p>
+                    <h4 class="mb-5 mt-3 text-2xl font-medium leading-8 text-new-900 font-dmsans">
+                        Prime Commercial Space in Agrabad, Chattogram
+                    </h4>
+                    <div class="mb-7 flex items-center gap-x-2.5">
+                        <i class="fa-solid fa-map-pin text-secondary"></i>
+                        <p class="font-poppins text-sm font-medium text-new-800">
+                            Agrabad Commercial Area, Chattogram
+                        </p>
+                    </div>
+                    <hr />
+                    <div class="mt-6 grid grid-cols-2 items-center">
+                        <div class="flex items-center gap-x-2.5">
+                            <div class="flex items-center gap-x-2">
+                                <i class="fa-solid fa-bed text-primary"></i>
+                                <span class="font-poppins text-sm font-normal text-new-900">2 Rooms</span>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <i class="fa-solid fa-bath text-primary"></i>
+                                <span class="font-poppins text-sm font-normal text-new-900">1 Kitchen</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end">
+                            <a href="#" class="flex items-center gap-x-1.5 transition-all duration-300 ease-in-out hover:gap-x-4 md:gap-x-2 lg:gap-x-2.5 font-poppins text-sm font-medium text-new-900">
+                                <span>Inquire Now</span>
+                                <i class="fa-solid fa-arrow-right text-primary"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-[20px] bg-new-100 border border-[#f4f5f6] transition-all duration-300 ease-in-out hover:shadow-2xl group cursor-pointer" data-aos-delay="150">
+                <div class="relative h-auto w-full overflow-hidden rounded-t-[20px]">
+                    <div class="absolute right-0 top-0 z-10 rounded-tr-[20px] bg-[#3b71fe] px-3.5 py-1.5 font-semibold text-white">
+                        For Sale
+                    </div>
+                    <img
+                        src="assets/images/image-47.png"
+                        alt="Featured Land Plot"
+                        class="h-full max-h-[250px] w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.15]"
+                    />
+                </div>
+                <div class="p-8">
+                    <p class="text-2xl font-medium text-new-900">BDT 65 Lakh</p>
+                    <h4 class="mb-5 mt-3 text-2xl font-medium leading-8 text-new-900 font-dmsans">
+                        Ready Residential Plot in Purbachal, Dhaka
+                    </h4>
+                    <div class="mb-7 flex items-center gap-x-2.5">
+                        <i class="fa-solid fa-map-pin text-secondary"></i>
+                        <p class="font-poppins text-sm font-medium text-new-800">
+                            Sector 3, Purbachal New Town
+                        </p>
+                    </div>
+                    <hr />
+                    <div class="mt-6 grid grid-cols-2 items-center">
+                        <div class="flex items-center gap-x-2.5">
+                            <div class="flex items-center gap-x-2">
+                                <i class="fa-solid fa-ruler-combined text-primary"></i>
+                                <span class="font-poppins text-sm font-normal text-new-900">5 Katha</span>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <i class="fa-solid fa-road text-primary"></i>
+                                <span class="font-poppins text-sm font-normal text-new-900">40 ft Road</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end">
+                            <a href="#" class="flex items-center gap-x-1.5 transition-all duration-300 ease-in-out hover:gap-x-4 md:gap-x-2 lg:gap-x-2.5 font-poppins text-sm font-medium text-new-900">
+                                <span>Get Map</span>
+                                <i class="fa-solid fa-arrow-right text-primary"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="rounded-[20px] bg-new-100 border border-[#f4f5f6] transition-all duration-300 ease-in-out hover:shadow-2xl"
+                >
+                <div class="group relative h-auto w-full overflow-hidden rounded-t-[20px]">
+                    <div
+                    class="absolute right-0 top-0 z-10 rounded-tr-[20px] bg-[#3b71fe] px-3.5 py-1.5 font-semibold text-white"
+                    >
+                    For Sale
+                    </div>
+                    <img
+                    src="assets/images/image-48.png"
+                    class="h-full max-h-[250px] w-full object-cover transition-all duration-700 ease-in-out group-hover:scale-[1.15]"
+                    />
+                </div>
+                <div class="p-8">
+                    <p class="text-2xl font-medium text-new-900">
+                    BDT 95 Lakh
+                    </p>
+                    <h4 class="mb-5 mt-3 text-2xl font-medium leading-8 text-new-900">
+                    Your Trusted Partner in Navigating the Market
+                    </h4>
+                    <div class="mb-7 flex items-center gap-x-[10px]">
+                    <i class="fa-solid fa-map-pin text-secondary"></i>
+                    <p class="font-poppins text-sm font-medium text-new-800">
+                        Mirpur DOHS, Dhaka
+                    </p>
+                    </div>
+                    <hr />
+                    <div class="mt-6 grid grid-cols-2 items-center">
+                    <div class="flex items-center gap-x-[10px]">
+                        <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-bed text-primary"></i>
+                        <span class="font-poppins text-sm font-normal text-new-900"
+                            >3 Beds</span
+                        >
+                        </div>
+                        <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-bath text-primary"></i>
+                        <span class="font-poppins text-sm font-normal text-new-900"
+                            >3 Baths</span
+                        >
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-end">
+                        <a
+                        href="#"
+                        class="flex items-center gap-x-1.5 transition-all duration-300 ease-in-out hover:gap-x-4 md:gap-x-2 lg:gap-x-2.5 font-poppins text-sm font-medium text-new-900"
+                        >
+                        <span>View Details</span>
+                        <i class="fa-solid fa-arrow-right text-primary"></i>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div
+                class="rounded-[20px] bg-new-100 border border-[#f4f5f6] transition-all duration-300 ease-in-out hover:shadow-2xl"
+                >
+                <div class="group relative h-auto w-full overflow-hidden rounded-t-[20px]">
+                    <div
+                    class="absolute right-0 top-0 z-10 rounded-tr-[20px] bg-[#3b71fe] px-3.5 py-1.5 font-semibold text-white"
+                    >
+                    For Rent
+                    </div>
+                    <img
+                    src="assets/images/image-49.png"
+                    class="h-full max-h-[250px] w-full object-cover transition-all duration-700 ease-in-out group-hover:scale-[1.15]"
+                    />
+                </div>
+                <div class="p-8">
+                    <p class="text-2xl font-medium text-new-900">
+                    BDT 35,000<span
+                        class="font-poppins text-sm font-medium text-new-800"
+                        >/mo</span
+                    >
+                    </p>
+                    <h4 class="mb-5 mt-3 text-2xl font-medium leading-8 text-new-900">
+                    Creating Extraordinary Experiences for Your Family
+                    </h4>
+                    <div class="mb-7 flex items-center gap-x-[10px]">
+                    <i class="fa-solid fa-map-pin text-secondary"></i>
+                    <p class="font-poppins text-sm font-medium text-new-800">
+                        Khilgaon, Dhaka
+                    </p>
+                    </div>
+                    <hr />
+                    <div class="mt-6 grid grid-cols-2 items-center">
+                    <div class="flex items-center gap-x-[10px]">
+                        <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-bed text-primary"></i>
+                        <span class="font-poppins text-sm font-normal text-new-900"
+                            >3 Beds</span
+                        >
+                        </div>
+                        <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-bath text-primary"></i>
+                        <span class="font-poppins text-sm font-normal text-new-900"
+                            >3 Baths</span
+                        >
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-end">
+                        <a
+                        href="#"
+                        class="flex items-center gap-x-1.5 transition-all duration-300 ease-in-out hover:gap-x-4 md:gap-x-2 lg:gap-x-2.5 font-poppins text-sm font-medium text-new-900"
+                        >
+                        <span>Inquire Now</span>
+                        <i class="fa-solid fa-arrow-right text-primary"></i>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div
+                class="rounded-[20px] bg-new-100 border border-[#f4f5f6] transition-all duration-300 ease-in-out hover:shadow-2xl"
+                >
+                <div class="group relative h-auto w-full overflow-hidden rounded-t-[20px]">
+                    <div
+                    class="absolute right-0 top-0 z-10 rounded-tr-[20px] bg-[#3b71fe] px-3.5 py-1.5 font-semibold text-white"
+                    >
+                    For Sale
+                    </div>
+                    <img
+                    src="assets/images/image-50.png"
+                    class="h-full max-h-[250px] w-full object-cover transition-all duration-700 ease-in-out group-hover:scale-[1.15]"
+                    />
+                </div>
+                <div class="p-8">
+                    <p class="text-2xl font-medium text-new-900">BDT 1.8 Crore</p>
+                    <h4 class="mb-5 mt-3 text-2xl font-medium leading-8 text-new-900">
+                    Expert Guidance to Your Perfect Home
+                    </h4>
+                    <div class="mb-7 flex items-center gap-x-[10px]">
+                    <i class="fa-solid fa-map-pin text-secondary"></i>
+                    <p class="font-poppins text-sm font-medium text-new-800">
+                        Nasirabad, Chattogram
+                    </p>
+                    </div>
+                    <hr />
+                    <div class="mt-6 grid grid-cols-2 items-center">
+                    <div class="flex items-center gap-x-[10px]">
+                        <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-bed text-primary"></i>
+                        <span class="font-poppins text-sm font-normal text-new-900"
+                            >4 Beds</span
+                        >
+                        </div>
+                        <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-bath text-primary"></i>
+                        <span class="font-poppins text-sm font-normal text-new-900"
+                            >4 Baths</span
+                        >
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-end">
+                        <a
+                        href="#"
+                        class="flex items-center gap-x-1.5 transition-all duration-300 ease-in-out hover:gap-x-4 md:gap-x-2 lg:gap-x-2.5 font-poppins text-sm font-medium text-new-900"
+                        >
+                        <span>View Details</span>
+                        <i class="fa-solid fa-arrow-right text-primary"></i>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Properties section end -->
+
+
+<!-- How it works start -->
+<section class="section-padding overflow-hidden bg-white">
+  <div class="container flex flex-col items-center justify-center">
+    <h2 class="font-dmsans text-3xl md:text-4xl font-bold mb-5 text-new-900">
+      Your Path to Property Ownership: Simple Steps
+    </h2>
+    <p class="heading-tagline text-gray-700 max-w-2xl text-center">
+      We make finding your ideal property in Dhaka, Chattogram, or Sylhet
+      swift and transparent, guiding you from search to success.
+    </p>
+    <div
+      class="mt-14 flex gap-10 flex-col items-center gap-0 gap-y-5 px-3 md:flex-row md:gap-y-0 2xl:px-0"
+    >
+      <div
+        class="how-it-works-card group relative z-0 duration-300 ease-in-out hover:shadow-2xl hover:transition-all max-w-xs p-6 text-center border border-gray-100 rounded-xl"
+      >
+        <div class="how-it-works__rounded-1"></div>
+        <div class="how-it-works__rounded-2"></div>
+        <div
+          class="how-it-works_img-container  hover:transition-all hover:duration-300 hover:ease-in-out group-hover:text-[#3b71fe]"
+        >
+          <svg
+            width="40"
+            height="36"
+            viewBox="0 0 40 36"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M39.6508 16.5394L34.0935 11.6955V3.23989C34.0935 2.98495 33.8712 2.73001 33.56 2.73001H28.8473C28.5806 2.73001 28.3138 2.94246 28.3138 3.23989V6.68162L21.2893 0.478017C20.5335 -0.159339 19.422 -0.159339 18.6662 0.478017L0.349162 16.5394C-0.36218 17.1343 0.0824085 18.2815 1.0605 18.2815H3.81696L20 3.83476L36.183 18.2815H38.9395C39.9176 18.2815 40.3622 17.1767 39.6508 16.5394Z"
+              fill="currentColor"
+            />
+            <path
+              d="M34.3158 32.0909H34.049C34.049 32.0484 34.049 32.0059 34.049 31.9209V18.409L20 5.8743L5.90652 18.409V31.9209C5.90652 31.9634 5.90652 32.0484 5.90652 32.0909H5.37302C5.01735 32.0909 4.70613 32.3883 4.70613 32.7282V35.3626C4.70613 35.7026 5.01735 36 5.37302 36H34.2713C34.627 36 34.9382 35.7026 34.9382 35.3626V32.7282C34.9827 32.3883 34.7159 32.0909 34.3158 32.0909ZM28.7139 21.2133L26.8022 19.8961L19.1997 29.4565L14.9761 26.5671L10.2635 32.2184L8.30731 30.7312L14.4871 23.2529L18.6662 26.1422L24.7571 18.494L22.8898 17.1768L28.6695 15.4346V21.2133H28.7139Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+
+        <div class="content">
+          <h4 class="text-xl font-semibold mb-2 text-new-900">
+            1. Define & Discover
+          </h4>
+          <p class="text-sm text-gray-600">
+            Tell us your needs. Use our filters to narrow down thousands of
+            listings by area, budget, and desired amenities.
+          </p>
+        </div>
+      </div>
+      <div class="h-[3px] w-full flex-1 bg-gray-300 md:w-8"></div>
+      
+      <div
+        class="how-it-works-card group relative z-0 duration-300 ease-in-out hover:shadow-2xl hover:transition-all max-w-xs p-6 text-center border border-gray-100 rounded-xl"
+      >
+        <div class="how-it-works__rounded-1"></div>
+        <div class="how-it-works__rounded-2"></div>
+        <div
+          class="how-it-works_img-container hover:transition-all hover:duration-300 hover:ease-in-out group-hover:text-[#3b71fe]"
+        >
+          <svg
+            width="40"
+            height="38"
+            viewBox="0 0 40 38"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M39.3282 16.8827L21.3815 0.538121C20.5938 -0.1794 19.4059 -0.179322 18.6185 0.538043L0.67172 16.8828C0.0407064 17.4575 -0.16773 18.3429 0.14055 19.1385C0.448908 19.9341 1.19969 20.4482 2.05336 20.4482H4.91975V36.8242C4.91975 37.4735 5.44647 37.9999 6.09608 37.9999H15.9331C16.5827 37.9999 17.1094 37.4736 17.1094 36.8242V26.8812H22.8908V36.8243C22.8908 37.4736 23.4175 38 24.0671 38H33.9036C34.5532 38 35.08 37.4736 35.08 36.8243V20.4482H37.9469C38.8005 20.4482 39.5514 19.9341 39.8597 19.1385C40.1676 18.3429 39.9592 17.4575 39.3282 16.8827Z"
+              fill="currentColor"
+            />
+            <path
+              d="M34.7727 2.34679H26.8728L35.949 10.5954V3.52244C35.949 2.87316 35.4224 2.34679 34.7727 2.34679Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+
+        <div class="content">
+          <h4 class="text-xl font-semibold mb-2 text-new-900">
+            2. Expert Guided Tours
+          </h4>
+          <p class="text-sm text-gray-600">
+            Your dedicated agent organizes site visits and provides in-depth
+            information on pricing and neighborhood value.
+          </p>
+        </div>
+      </div>
+      <div class="h-[3px] w-full flex-1 bg-gray-300 md:w-8"></div>
+      
+      <div
+        class="how-it-works-card group relative z-0 duration-300 ease-in-out hover:shadow-2xl hover:transition-all max-w-xs p-6 text-center border border-gray-100 rounded-xl"
+      >
+        <div class="how-it-works__rounded-1"></div>
+        <div class="how-it-works__rounded-2"></div>
+        <div
+          class="how-it-works_img-container hover:transition-all hover:duration-300 hover:ease-in-out group-hover:text-[#3b71fe]"
+        >
+          <svg
+            width="40"
+            height="36"
+            viewBox="0 0 40 36"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M34.0935 11.6955L39.6508 16.5394C40.3622 17.1767 39.9176 18.2815 38.9395 18.2815H36.183L20 3.83476L3.81696 18.2815H1.0605C0.0824085 18.2815 -0.36218 17.1343 0.349162 16.5394L18.6662 0.478017C19.422 -0.159339 20.5335 -0.159339 21.2893 0.478017L28.3138 6.68162V3.23989C28.3138 2.94246 28.5806 2.73001 28.8473 2.73001H33.56C33.8712 2.73001 34.0935 2.98495 34.0935 3.23989V11.6955Z"
+              fill="currentColor"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M34.049 32.0909H34.3158C34.7159 32.0909 34.9827 32.3883 34.9382 32.7282V35.3626C34.9382 35.7026 34.627 36 34.2713 36H5.37302C5.01735 36 4.70613 35.7026 4.70613 35.3626V32.7282C4.70613 32.3883 5.01735 32.0909 5.37302 32.0909H5.90652V18.409L20 5.8743L34.049 18.409V32.0909ZM24 21C24 23.2091 22.2091 25 20 25C17.7909 25 16 23.2091 16 21C16 18.7909 17.7909 17 20 17C22.2091 17 24 18.7909 24 21ZM12 28C12 27.4477 12.4477 27 13 27H16.9458C17.2905 27 17.611 27.1776 17.7938 27.47L19.152 29.6432C19.5437 30.2699 20.4563 30.2699 20.848 29.6432L22.2062 27.47C22.389 27.1776 22.7095 27 23.0542 27H27C27.5523 27 28 27.4477 28 28V33H12V28Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+
+        <div class="content">
+          <h4 class="text-xl font-semibold mb-2 text-new-900">
+            3. Secure & Close
+          </h4>
+          <p class="text-sm text-gray-600">
+            We handle all legal paperwork and negotiations, ensuring a smooth,
+            hassle-free closing and handover of your property.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works end -->
+
+<!-- cta start -->
+<section
+    class="section-padding container flex flex-col sm:flex-row items-center justify-around px-3 gap-y-10 2xl:px-0"
+    id="h1-cta"
+>
+    <div class="cta-content flex items-center gap-4">
+        <div class="cta-img border border-[#3b71fe] p-3 rounded-full bg-[#ebf1ff] size-16 flex items-center justify-center">
+            <img src="assets/icons/prize.svg" alt="Award Icon" class="size-8" />
+        </div>
+        <div class="cta-data">
+            <h2 class="text-4xl lg:text-5xl xl:text-6xl font-extrabold font-dmsans leading-none">
+                <span id="h1-award">10</span>
+                <span class="text-[#3b71fe]">+</span>
+            </h2>
+            <p class="text-lg font-medium text-gray-700 mt-1">Years of Service</p>
+        </div>
+    </div>
+
+    <div class="cta-content flex items-center gap-4">
+        <div class="cta-img border border-[#ff5c00] p-3 rounded-full bg-orange-100/50 size-16 flex items-center justify-center">
+            <img src="assets/icons/building.svg" alt="Building Icon" class="size-8" />
+        </div>
+        <div class="cta-data">
+            <h2 class="text-4xl lg:text-5xl xl:text-6xl font-extrabold font-dmsans leading-none">
+                <span id="h1-property">10</span>
+                <span class="text-[#ff5c00]">K+</span>
+            </h2>
+            <p class="text-lg font-medium text-gray-700 mt-1">Properties Managed</p>
+        </div>
+    </div>
+
+    <div class="cta-content flex items-center gap-4">
+        <div class="cta-img border border-[#3b71fe] p-3 rounded-full bg-[#ebf1ff] size-16 flex items-center justify-center">
+            <img src="assets/icons/happy-customer.svg" alt="Happy Customer Icon" class="size-8" />
+        </div>
+        <div class="cta-data">
+            <h2 class="text-4xl lg:text-5xl xl:text-6xl font-extrabold font-dmsans leading-none">
+                <span id="h1-clients">15</span>
+                <span class="text-[#3b71fe]">K+</span>
+            </h2>
+            <p class="text-lg font-medium text-gray-700 mt-1">Satisfied Clients</p>
+        </div>
+    </div>
+</section>
+<!-- cta end -->
+
+
+<!-- testimonials start -->
+<section id="reviews"
+    class="section-padding container bg-[#FCF8F7] flex flex-col items-center justify-center px-3 2xl:px-0"
+>
+    <h2 class="heading-2 mb-2.5 md:mb-3.5 lg:mb-5 text-3xl md:text-4xl font-bold font-dmsans text-center">
+        Trusted by Home Buyers Across Bangladesh
+    </h2>
+    <p class="heading-tagline font-poppins text-center text-gray-600 text-lg md:text-xl">
+        See what our clients are saying about their property journey with us.
+    </p>
+
+    <div class="my-4 w-full grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 md:my-7 lg:my-9 xl:my-12">
+        
+        <div class="urs-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="urs-header flex items-center mb-4">
+                <div class="urs-user-img w-12 h-12 mr-4 overflow-hidden rounded-full">
+                    <img
+                        src="assets/images/image-95.png"
+                        alt="Client Reviewer"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <div>
+                    <h6 class="text-xl font-semibold text-new-900">Nadia Islam</h6>
+                    <span class="text-sm text-gray-500">New Homeowner, Dhaka</span>
+                </div>
+            </div>
+            <div class="urs-body">
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    “The team provided exceptional service in helping us find an apartment in <span class="font-bold">Gulshan</span>. Their local knowledge and negotiation skills saved us time and money. Highly recommend for property hunting in Dhaka!”
+                </p>
+                <div class="flex items-center space-x-0.5 text-lg"> 
+                    <i class="fa-solid fa-star text-[#FBB040]"></i>
+                    <i class="fa-solid fa-star text-[#FBB040]"></i>
+                    <i class="fa-solid fa-star text-[#FBB040]"></i>
+                    <i class="fa-solid fa-star text-[#FBB040]"></i>
+                    <i class="fa-regular fa-star text-new-200"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="urs-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="urs-header flex items-center mb-4">
+                <div class="urs-user-img w-12 h-12 mr-4 overflow-hidden rounded-full">
+                    <img
+                        src="assets/images/image-96.png"
+                        alt="Client Reviewer"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <div>
+                    <h6 class="text-xl font-semibold text-new-900">Rana Chowdhury</h6>
+                    <span class="text-sm text-gray-500">Real Estate Investor, Chattogram</span>
+                </div>
+            </div>
+            <div class="urs-body">
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    “We used this service to purchase a commercial plot in <span class="font-bold">Chattogram</span>. The paperwork was seamless and the agent was transparent throughout. A truly professional and reliable real estate partner.”
+                </p>
+                <div class="flex items-center space-x-0.5 text-lg">
+                    <i class="fa-solid fa-star text-[#FBB040]"></i>
+                    <i class="fa-solid fa-star text-[#FBB040]"></i>
+                    <i class="fa-solid fa-star text-[#FBB040]"></i>
+                    <i class="fa-solid fa-star text-[#FBB040]"></i>
+                    <i class="fa-solid fa-star-half-stroke text-[#FBB040]"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="urs-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hidden md:block lg:block"> 
+            <div class="urs-header flex items-center mb-4">
+                <div class="urs-user-img w-12 h-12 mr-4 overflow-hidden rounded-full">
+                    <img
+                        src="assets/images/image-97.png"
+                        alt="Client Reviewer"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <div>
+                    <h6 class="text-xl font-semibold text-new-900">Dr. Amin Khan</h6>
+                    <span class="text-sm text-gray-500">Property Seller, Sylhet</span>
+                </div>
+            </div>
+            <div class="urs-body">
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    “Selling my land in <span class="font-bold">Sylhet</span>  was fast and stress-free. The agent clearly understood the market value and secured a great offer quickly. Their expertise in Bangladesh real estate is unmatched.”
+                </p>
+                <div class="flex items-center space-x-0.5 text-lg">
+                    <i class="fa-solid fa-star text-[#FBB040]"></i>
+                    <i class="fa-solid fa-star text-[#FBB040]"></i>
+                    <i class="fa-solid fa-star text-[#FBB040]"></i>
+                    <i class="fa-solid fa-star text-[#FBB040]"></i>
+                    <i class="fa-solid fa-star text-[#FBB040]"></i>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+<!-- testimonials end -->
+
+<!-- blogs start -->
+<section id="blogs" class="section-padding flex flex-col items-center justify-center">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-0">
+    <h2 class="heading-2 text-center mb-2.5 md:mb-3.5 lg:mb-5 text-3xl md:text-4xl font-bold font-dmsans">
+      Market Insights & Investment Guides
+    </h2>
+    <p class="text-center text-[1.125rem] text-[#797e8a] font-poppins text-lg md:text-xl py-5 lg:px-[50px] md:px-[35px]">
+      Stay ahead of the curve with our expert articles on property trends, legal tips, and investment advice in Bangladesh.
+    </p>
+
+    <div class="grid w-full gap-5 md:gap-7 lg:grid-cols-2 lg:gap-10 xl:gap-12 mt-8">
+      
+      <!-- Featured Blog -->
+      <div>
+        <div class="w-full overflow-hidden rounded-2xl">
+          <img
+            src="assets/images/image-33.png"
+            alt="Bangladesh Real Estate Market"
+            class="h-auto w-full object-cover object-center transition-all hover:scale-[1.15] max-h-[432px]"
+          />
+        </div>
+        <div class="mt-6">
+          <div class="mb-4 flex flex-col justify-between lg:flex-row">
+            <a
+              href="blog.html"
+              class="order-2 text-[34px] font-medium leading-[44px] text-nature-600 transition-all hover:text-primary hover:underline lg:order-1 lg:w-3/4"
+            >
+              The 2024 Outlook: Where to Invest in Dhaka's Property Market
+            </a>
+            <span
+              class="order-1 font-poppins text-base font-medium text-nature-200 lg:order-2"
+            >
+              Oct 25, 2024
+            </span>
+          </div>
+          <p class="mb-7 font-poppins text-lg font-normal text-nature-200 lg:w-3/4">
+            We analyze the shifting dynamics of the capital's real estate, highlighting key neighborhoods and emerging investment hotspots for maximum returns.
+          </p>
+          <a
+            href="blog.html"
+            class="font-poppins text-lg text-primary transition-all hover:underline"
+          >
+            Read More <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Blog List -->
+      <div class="grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-1 lg:gap-8 xl:gap-10">
+
+        <!-- Blog Card 1 -->
+        <div class="blog-card flex flex-col md:flex-row md:items-center p-4 rounded-xl shadow-md bg-white">
+          <div class="w-full h-auto mb-3 md:mb-0 md:order-last md:w-auto flex-shrink-0 overflow-hidden rounded-2xl">
+            <img
+              src="assets/images/image-34.png"
+              alt="Legal Document"
+              class="w-full md:max-w-[150px] lg:max-w-[170px] max-h-[120px] rounded-2xl object-cover object-center transition-all duration-200 ease-in-out hover:scale-[1.2]"
+            />
+          </div>
+          <div class="blog-content flex-1 md:pr-4">
+            <a href="blog.html" class="blog-header text-lg font-semibold text-new-900 transition-all hover:text-primary hover:underline">
+              Understanding Deed Registration: A Buyer's Guide.
+            </a>
+            <p class="text-sm text-gray-600 my-1">
+              Essential legal steps for safe property purchase.
+            </p>
+            <a href="blog.html" class="text-primary text-sm font-medium hover:underline">
+              Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Blog Card 2 -->
+        <div class="blog-card flex flex-col md:flex-row md:items-center p-4 rounded-xl shadow-md bg-white">
+          <div class="w-full h-auto mb-3 md:mb-0 md:order-last md:w-auto flex-shrink-0 overflow-hidden rounded-2xl">
+            <img
+              src="assets/images/image-35.png"
+              alt="Bank/Finance"
+              class="w-full md:max-w-[150px] lg:max-w-[170px] max-h-[120px] rounded-2xl object-cover object-center transition-all duration-200 ease-in-out hover:scale-[1.2]"
+            />
+          </div>
+          <div class="blog-content flex-1 md:pr-4">
+            <a href="blog.html" class="blog-header text-lg font-semibold text-new-900 transition-all hover:text-primary hover:underline">
+              Choosing the Right Home Loan Provider in Bangladesh.
+            </a>
+            <p class="text-sm text-gray-600 my-1">
+              Comparing interest rates and terms from local banks.
+            </p>
+            <a href="blog.html" class="text-primary text-sm font-medium hover:underline">
+              Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Blog Card 3 -->
+        <div class="blog-card flex flex-col md:flex-row md:items-center p-4 rounded-xl shadow-md bg-white">
+          <div class="w-full h-auto mb-3 md:mb-0 md:order-last md:w-auto flex-shrink-0 overflow-hidden rounded-2xl">
+            <img
+              src="assets/images/image-20.png"
+              alt="Property Valuation"
+              class="w-full md:max-w-[150px] lg:max-w-[170px] max-h-[120px] rounded-2xl object-cover object-center transition-all duration-200 ease-in-out hover:scale-[1.2]"
+            />
+          </div>
+          <div class="blog-content flex-1 md:pr-4">
+            <a href="blog.html" class="blog-header text-lg font-semibold text-new-900 transition-all hover:text-primary hover:underline">
+              Top Factors that Increase Your Property Value in Sylhet.
+            </a>
+            <p class="text-sm text-gray-600 my-1">
+              Strategic improvements for sellers to maximize profit.
+            </p>
+            <a href="blog.html" class="text-primary text-sm font-medium hover:underline">
+              Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- blogs end -->
+
+<!-- contact start -->
+<section id="contact" class="section-padding overflow-hidden bg-[#ebf1ff]">
+    <div
+        class="container mx-auto px-4 sm:px-6 lg:px-8 grid gap-10 md:grid-cols-10 md:gap-12 lg:gap-16 xl:gap-20 2xl:px-0"
+    >
+        <div
+            class="flex size-fit flex-col px-1 md:col-span-4 xl:px-0"
+        >
+            <h2 class="heading-2 !mb-0 !text-start xl:!leading-[64px] text-3xl md:text-4xl font-bold font-dmsans text-new-900">
+                Ready to Find Your Perfect Property in Bangladesh? 🏡
+            </h2>
+
+            <div class="mt-4 md:mt-8 lg:mt-14 xl:mt-20">
+                <h4
+                    class="text-xl font-medium text-nature-500 md:text-2xl lg:text-3xl xl:text-[34px] text-new-900"
+                >
+                    Get in Touch with Our Property Experts
+                </h4>
+                <p
+                    class="mt-1.5 font-poppins text-nature-300 md:mt-2.5 lg:mt-3 lg:text-lg text-gray-700"
+                >
+                    Fill out the form below, and our dedicated team will reach out to discuss your property needs in Dhaka, Chattogram, or Sylhet within **4 hours**.
+                </p>
+                
+                <div
+                    class="mt-3.5 flex items-center gap-x-3 md:mt-5 md:gap-x-4 lg:mt-6 lg:gap-x-5 xl:mt-[30px] xl:gap-x-6"
+                >
+                    <a
+                        href="#"
+                        class="text-nature-400 transition-all hover:text-[#1877f2]"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="fa-brands fa-square-facebook text-2xl"></i
+                    ></a>
+                    <a
+                        href="#"
+                        class="text-nature-400 transition-all hover:text-[#c32aa3]"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="fa-brands fa-square-instagram text-2xl"></i
+                    ></a>
+                    <a
+                        href="#"
+                        class="text-nature-400 transition-all hover:text-[#0a66c2]"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="fa-brands fa-linkedin text-2xl"></i
+                    ></a>
+                    <a
+                        href="#"
+                        class="text-nature-400 transition-all hover:text-black"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="fa-brands fa-square-x-twitter text-2xl"></i
+                    ></a>
+                </div>
+
+                <div
+                    class="mt-5 flex flex-col gap-y-4 md:mt-10 md:gap-y-5 lg:mt-14 lg:gap-y-6 xl:mt-[70px] xl:gap-y-7"
+                >
+                    <div class="flex gap-x-2 lg:gap-x-3">
+                        <div
+                            class="flex size-10 items-center justify-center rounded-md bg-[#3b71fe] xl:size-12"
+                        >
+                            <i
+                                class="fa-solid fa-phone-volume text-lg text-white xl:text-xl"
+                            ></i>
+                        </div>
+                        <div class="size-fit">
+                            <p
+                                class="font-poppins font-medium text-nature-400 lg:text-lg text-new-900"
+                            >
+                                +880 1712-345678 (Dhaka)
+                            </p>
+                            <span
+                                class="font-poppins text-sm font-normal text-nature-200 text-gray-500"
+                                >24/7 Hotline Support</span
+                            >
+                        </div>
+                    </div>
+                    <div class="flex gap-x-2 lg:gap-x-3">
+                        <div
+                            class="flex size-10 items-center justify-center rounded-md bg-[#3b71fe] xl:size-12"
+                        >
+                            <i
+                                class="fa-solid fa-envelope text-lg text-white xl:text-xl"
+                            ></i>
+                        </div>
+                        <div class="size-fit">
+                            <p
+                                class="font-poppins font-medium text-nature-400 lg:text-lg text-new-900"
+                            >
+                                inquiries@yourrealestate.com
+                            </p>
+                            <span
+                                class="font-poppins text-sm font-normal text-nature-200 text-gray-500"
+                                >General Inquiry Email</span
+                            >
+                        </div>
+                    </div>
+                    <div class="flex gap-x-2 lg:gap-x-3">
+                        <div
+                            class="flex size-10 items-center justify-center rounded-md bg-[#3b71fe] xl:size-12"
+                        >
+                            <i
+                                class="fa-solid fa-map-pin text-lg text-white xl:text-xl"
+                            ></i>
+                        </div>
+                        <div class="size-fit">
+                            <p
+                                class="font-poppins font-medium text-nature-400 lg:text-lg text-new-900"
+                            >
+                                12/A, Road 27, Banani, Dhaka 1213, Bangladesh
+                            </p>
+                            <span
+                                class="font-poppins text-sm font-normal text-nature-200 text-gray-500"
+                                >Our Head Office Address</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="rounded-2xl bg-white p-7 pt-12 md:col-span-6 shadow-2xl"
+        >
+            <form class="grid w-full gap-2.5 md:gap-4 lg:gap-5 xl:gap-6">
+                <div class="w-full">
+                    <label
+                        for="name"
+                        class="mb-1.5 block font-poppins text-base font-medium text-nature-600 md:mb-2.5 lg:mb-3 text-new-900"
+                        >Your Name</label
+                    >
+                    <input
+                        type="text"
+                        placeholder="Enter your full name"
+                        id="name"
+                        class="custom-form-input placeholder:font-poppins placeholder:text-sm placeholder:text-nature-50 border border-gray-300 focus:border-[#3b71fe] transition duration-200 p-3 rounded-lg w-full"
+                    />
+                </div>
+
+                <div
+                    class="grid grid-cols-2 gap-2.5 md:gap-4 lg:gap-5 xl:gap-6"
+                >
+                    <div class="w-full">
+                        <label
+                            for="email"
+                            class="mb-1.5 block font-poppins text-base font-medium text-nature-600 md:mb-2.5 lg:mb-3 text-new-900"
+                            >Email</label
+                        >
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            id="email"
+                            class="custom-form-input placeholder:font-poppins placeholder:text-sm placeholder:text-nature-50 border border-gray-300 focus:border-[#3b71fe] transition duration-200 p-3 rounded-lg w-full"
+                        />
+                    </div>
+                    <div class="w-full">
+                        <label
+                            class="mb-1.5 block font-poppins text-base font-medium text-nature-600 md:mb-2.5 lg:mb-3 text-new-900"
+                            for="phone"
+                            >Phone (e.g., +880 1XXXXXXXXX)</label
+                        >
+                        <input
+                            id="phone"
+                            type="tel"
+                            placeholder="Enter your phone number"
+                            class="custom-form-input placeholder:font-poppins placeholder:text-sm placeholder:text-nature-50 border border-gray-300 focus:border-[#3b71fe] transition duration-200 p-3 rounded-lg w-full"
+                        />
+                    </div>
+                </div>
+
+                <div class="w-full">
+                    <label
+                        class="mb-1.5 block font-poppins text-base font-medium text-nature-600 md:mb-2.5 lg:mb-3 text-new-900"
+                        for="property"
+                        >Inquiry Type</label
+                    >
+                    <select name="property" id="property" class="custom-form-input border border-gray-300 focus:border-[#3b71fe] transition duration-200 p-3 rounded-lg w-full appearance-none bg-white">
+                        <option
+                            value=""
+                            class="font-poppins text-sm text-nature-50"
+                        >
+                            I'm interested in...
+                        </option>
+                        <option value="buy-apartment">Buying an Apartment/Flat</option>
+                        <option value="buy-land">Buying Land/Commercial Property</option>
+                        <option value="sell-property">Selling a Property</option>
+                        <option value="rent-property">Renting a Property</option>
+                        <option value="general-inquiry">General Inquiry/Consultation</option>
+                    </select>
+                </div>
+
+                <div class="w-full">
+                    <label
+                        class="mb-1.5 block font-poppins text-base font-medium text-nature-600 md:mb-2.5 lg:mb-3 text-new-900"
+                        for="message"
+                        >Message</label
+                    >
+                    <textarea
+                        name="message"
+                        id="message"
+                        placeholder="Tell us about your property goals, budget, and preferred location (e.g., Mirpur, Khulna, etc.)"
+                        rows="8"
+                        class="custom-form-input max-h-36 placeholder:font-poppins placeholder:text-sm placeholder:text-nature-50 md:max-h-40 lg:max-h-48 xl:max-h-56 border border-gray-300 focus:border-[#3b71fe] transition duration-200 p-3 rounded-lg w-full"
+                    ></textarea>
+                </div>
+
+                <div>
+                    <button
+                        type="submit"
+                        class="rounded-xl bg-[#3b71fe] px-8 py-3.5 font-poppins font-medium text-white hover:text-black transition-all hover:bg-white hover:border hover:border-[#3b71fe] md:px-9 md:py-4 lg:px-10 lg:py-5 lg:text-lg xl:px-11 xl:py-[22px] w-full mt-3"
+                    >
+                        Request a Free Consultation
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- contact end -->
+
+<!-- footer start -->
+<footer class="section-padding-t bg-gray-50 border-t border-gray-200">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-0">
+        <div
+            class="mb-6 grid w-full grid-cols-6 gap-6 md:mb-10 md:grid-cols-5 md:gap-8 lg:mb-14 lg:gap-12 xl:gap-16"
+        >
+            <div class="col-span-6 sm:col-span-4 md:col-span-2">
+                <a href="#" class="flex items-center gap-x-3">
+                    <img
+                        src="assets/images/logo.png"
+                        alt=" LandMarkBD - Real Estate Bangladesh"
+                        class="size-fit"
+                    />
+                </a>
+
+                <div class="mt-10">
+                    <h5 class="mb-5 text-lg font-bold text-new-900 md:text-xl">
+                        Head Office
+                    </h5>
+                    <address
+                        class="font-poppins text-sm text-gray-700 not-italic md:text-base"
+                    >
+                        12/A, Road 27, Banani, Dhaka 1213, Bangladesh
+                        <span class="my-2 block font-medium text-new-900">+(880) 1712-345678</span>
+                        inquiries@yourrealestate.com
+                    </address>
+                </div>
+            </div>
+
+            <div class="col-span-3 sm:col-span-2 md:col-span-1">
+                <h5
+                    class="mb-2.5 text-lg font-bold text-new-900 md:mb-3.5 md:text-xl lg:mb-5"
+                >
+                    Company
+                </h5>
+                <ul
+                    class="grid gap-2 font-poppins text-sm text-gray-700 md:gap-3 md:text-base lg:gap-4"
+                >
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">About Us</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Our Agents</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Careers (Join Our Team)</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Testimonials</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">FAQs</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-span-3 sm:col-span-2 md:col-span-1">
+                <h5
+                    class="mb-2.5 text-lg font-bold text-new-900 md:mb-3.5 md:text-xl lg:mb-5"
+                >
+                    Property Types
+                </h5>
+                <ul
+                    class="grid gap-2 font-poppins text-sm text-gray-700 md:gap-3 md:text-base lg:gap-4"
+                >
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Apartments for Sale</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Commercial Space</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Land & Plots</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Luxury Homes</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Rental Properties</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">New Projects</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-span-3 sm:col-span-2 md:col-span-1">
+                <h5
+                    class="mb-2.5 text-lg font-bold text-new-900 md:mb-3.5 md:text-xl lg:mb-5"
+                >
+                    Resources
+                </h5>
+                <ul
+                    class="grid gap-2 font-poppins text-sm text-gray-700 md:gap-3 md:text-base lg:gap-4"
+                >
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Market Blog & News</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Property Valuation</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Legal & Documentation</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Terms & Conditions</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li class="transition-all hover:text-[#3b71fe]">
+                        <a href="#">Sitemap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-0">
+        <hr class="border-t border-gray-200" />
+    </div>
+
+    <div
+        class="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-0 pb-3.5 mt-5 flex flex-col items-center justify-center gap-y-3.5 md:pb-6 md:mt-10 md:flex-row md:justify-between lg:pb-9 lg:mt-[54px]"
+    >
+        <p class="text-sm leading-[14px] text-gray-600">
+            &copy;2025  LandMarkBD Real Estate | All Rights Reserved
+        </p>
+        
+        <p
+            class="pt-3.5 text-center text-sm leading-[14px] text-gray-600 sm:hidden"
+        >
+            Get The App
+        </p>
+        
+        <div class="flex items-center gap-x-2 md:gap-x-3">
+            <p
+                class="hidden text-sm leading-[14px] text-gray-600 sm:inline-block"
+            >
+                Get The App
+            </p>
+            <a href="#">
+                <img
+                    src="assets/images/image-56.png"
+                    alt="App Store"
+                    class="max-h-[38px] max-w-[135px] object-cover object-center"
+                />
+            </a>
+            <a href="#">
+                <img
+                    src="assets/images/image-7.png"
+                    alt="Google Play"
+                    class="max-h-[38px] max-w-[135px] object-cover object-center"
+                />
+            </a>
+        </div>
+        
+        <div class="flex items-center gap-x-4 md:gap-x-7 lg:gap-x-10">
+            <p class="text-sm leading-[14px] text-gray-600">Follow Us</p>
+            <ul class="flex items-center gap-x-4 md:gap-x-7 lg:gap-x-10">
+                <li>
+                    <a href="#"
+                        ><i
+                            class="fa-brands fa-facebook-f text-sm text-gray-500 transition-all hover:text-[#1877f2] md:text-base lg:text-lg"
+                        ></i
+                    ></a>
+                </li>
+                <li>
+                    <a href="#"
+                        >
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" width="16" height="16" fill="rgb(107 114 128)" class="transition-all hover:fill-black">
+                        <path d="M1152.9 0H956.6L599.7 461.6 243.2 0H0l442.7 602.6L20.4 1227h196.5l382.8-507.2L983 1227h243.5L776.1 620.2 1152.9 0z"/>
+                      </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        ><i
+                            class="fa-brands fa-instagram text-sm text-gray-500 transition-all hover:text-[#c32aa3] md:text-base lg:text-lg"
+                        ></i
+                    ></a>
+                </li>
+                <li>
+                    <a href="#"
+                        ><i
+                            class="fa-brands fa-linkedin-in text-sm text-gray-500 transition-all hover:text-[#0a66c2] md:text-base lg:text-lg"
+                        ></i
+                    ></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- footer end -->
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+      mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('hidden');
+    });
+</script>
+  
+</body>
+</html>
