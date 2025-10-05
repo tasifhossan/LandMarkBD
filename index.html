@@ -7,7 +7,7 @@
   <!-- Google Fonts: DM Sans and Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS CDN with custom fonts -->
+  <!-- Tailwind CSS custom fonts -->
   <script>
     tailwind.config = {
       theme: {
@@ -22,7 +22,7 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- FontAwesome CDN for icons -->
+  <!-- FontAwesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -35,7 +35,7 @@
 </head>
 <body class="bg-white">
 
-  <!-- Header -->
+  <!-- Header start -->
   <header class="sticky top-0 left-0 z-50 bg-white shadow-sm">
     <nav class="container mx-auto flex items-center justify-between px-4 py-3">
       <a href="index.html" aria-label="Home" class="py-1">
@@ -87,12 +87,13 @@
       </div>
     </div>
   </header>
+  <!-- Header end  -->
 
 <!-- Hero Section start -->
 <section class="w-full overflow-hidden bg-blue-50 px-3 pb-6 md:pb-8 lg:pb-12 xl:pb-16 2xl:px-0">
   <div class="relative w-full">
 
-    <!-- ✅ Background Image (only visible on md and up) -->
+    
     <div class="absolute inset-y-0 right-0 hidden md:block lg:w-3/5 xl:w-2/3 z-0">
       <picture>
         <source srcset="assets/images/image-112.png" media="(min-width: 1536px)" />
@@ -104,7 +105,7 @@
       </picture>
     </div>
     
-    <!-- ✅ Foreground Content (text and button) -->
+    
     <div
       class="relative z-10 container mx-auto flex flex-col items-center justify-center gap-y-3 py-16 md:items-start md:gap-y-4 md:py-28 lg:gap-y-6 lg:py-36 xl:gap-y-8 xl:py-40 2xl:py-52"
     >
@@ -1464,6 +1465,7 @@
 <!-- footer end -->
 
 <script>
+  // mobile menu
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -1476,3 +1478,4 @@
   
 </body>
 </html>
+
